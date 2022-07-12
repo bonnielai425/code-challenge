@@ -1,0 +1,256 @@
+:root {
+  --yellow: rgb(251, 188, 0);
+  --black: rgb(48, 52, 61);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--black);
+}
+
+/* >>>Nav Bar<<< */
+header {
+  background-color: rgb(221, 221, 221);
+  z-index: 999;
+  position: sticky;
+  padding: 5px 0px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  box-shadow: 0 -4px 4px -4px rgba(128, 128, 128, 0.348) inset;
+  align-items: center;
+}
+
+.logo {
+  grid-column: 2/3;
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 3rem;
+  height: auto;
+  object-fit: contain;
+}
+
+.company-name {
+  margin-left: 0.8rem;
+  font-size: large;
+  font-weight: 600;
+}
+
+nav {
+  grid-column: 3/4;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+nav li {
+  margin-right: 1.5rem;
+}
+
+nav .special {
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.nav-icon,
+.nav-icon::before,
+.nav-icon::after {
+  display: flex;
+  justify-content: flex-end;
+  width: 1.5rem;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+  background-color: var(--black);
+  position: relative;
+}
+
+.nav-icon::before {
+  content: "";
+  position: absolute;
+  bottom: 0.5rem;
+}
+
+.nav-icon::after {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+}
+
+/* >>>Layout<<< */
+
+.container {
+  max-width: 70rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column-item {
+  margin-right: 3rem;
+  margin-left: 3rem;
+}
+
+/* >>>Banner<<< */
+
+.banner {
+  padding-top: 1.8rem;
+  padding-bottom: 1.8rem;
+  background-color: rgb(246, 246, 246);
+  box-shadow: 0 4px 3px -3px rgba(128, 128, 128, 0.348);
+  line-height: 1.3;
+}
+
+.coffee {
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  align-self: flex-start;
+}
+
+/* >>>Motto<<< */
+.motto {
+  margin-top: 3.1rem;
+  margin-bottom: 3.1rem;
+}
+
+.motto-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.motto-item {
+  text-align: center;
+}
+
+.motto-item img,
+.motto-item h2 {
+  margin-bottom: 1.2rem;
+}
+
+/* >>>Text<<< */
+.text-margin-bottom {
+  margin-bottom: 3.1rem;
+}
+
+.title {
+  font-size: 3.2rem;
+}
+
+/* >>>Button<<< */
+.button-box {
+  margin-top: 1.8rem;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  background-color: var(--yellow);
+  color: rgb(81, 61, 1);
+  font-size: medium;
+  font-weight: 600;
+  padding: 1.2rem;
+  box-shadow: 3px 4px 3px -3px rgba(128, 128, 128, 0.348);
+}
+
+button.hollow {
+  border: 1px solid var(--yellow);
+  background-color: white;
+}
+
+/* >>>Responsive<<< */
+@media (max-width: 768px) {
+  /* >>>Responsive NavBar<<< */
+  header {
+    grid-template-columns: 0.8rem auto 1fr 0.8rem;
+  }
+
+  .mobile-nav {
+    grid-column: 3/4;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .logo-img {
+    width: 2rem;
+  }
+
+  /* >>>Responsive Layout<<< */
+  .container {
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+
+  .row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .column-item {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 1.8rem;
+  }
+
+  /* >>>Responsive Banner<<< */
+  .coffee {
+    order: -1;
+    max-width: 200px;
+    height: auto;
+    object-fit: contain;
+    align-self: center;
+  }
+
+  /* >>>Responsive Motto<<< */
+  .motto-row {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* >>>Responsive Text<<< */
+  .title {
+    font-size: 2rem;
+  }
+
+  /* >>>Responsive Button<<< */
+  button {
+    width: 100%;
+  }
+}
